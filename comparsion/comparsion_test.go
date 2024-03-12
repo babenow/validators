@@ -1,10 +1,10 @@
-package validators_test
+package comparsion_test
 
 import (
 	"fmt"
 	"testing"
 
-	"github.com/babenow/validators"
+	"github.com/babenow/validators/comparsion"
 	validation "github.com/go-ozzo/ozzo-validation"
 	"github.com/stretchr/testify/assert"
 )
@@ -32,7 +32,7 @@ func TestGt(t *testing.T) {
 
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {
-			err := validation.Validate(tC.value, validation.By(validators.Gt(tC.num, fmt.Sprintf("more %d", tC.num))))
+			err := validation.Validate(tC.value, validation.By(comparsion.Gt(tC.num, fmt.Sprintf("more %d", tC.num))))
 			if tC.ok {
 				assert.Nil(t, err)
 			} else {
