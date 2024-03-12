@@ -32,3 +32,36 @@ func Lt[T Number](num T, msg string) validation.RuleFunc {
 		return nil
 	}
 }
+
+// Gte GtreaterThe...
+func Gte[T Number](num T, msg string) validation.RuleFunc {
+	return func(value interface{}) error {
+		if value.(T) < num {
+			return fmt.Errorf("%s", msg)
+		}
+
+		return nil
+	}
+}
+
+// Lte LessThe....
+func Lte[T Number](num T, msg string) validation.RuleFunc {
+	return func(value interface{}) error {
+		if value.(T) > num {
+			return fmt.Errorf("%s", msg)
+		}
+
+		return nil
+	}
+}
+
+// Between ...
+func Between[T Number](left T, right T, msg string) validation.RuleFunc {
+	return func(value interface{}) error {
+		if value.(T) < left || value.(T) > right {
+			return fmt.Errorf("%s", msg)
+		}
+
+		return nil
+	}
+}
