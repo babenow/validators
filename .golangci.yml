@@ -1,0 +1,30 @@
+run:
+  timeout: 3m
+  tests: true
+
+linters:
+  enable:
+    # - golint
+    # - interfacer
+    - unconvert
+    # - dupl
+    - goconst
+    # - gofmt
+    - misspell
+    - unparam
+    - nakedret
+    - prealloc
+    # - gosec
+    #    - godox
+    - errcheck
+    - unused
+
+linters-settings:
+  misspell:
+    locale: US
+issues:
+  max-same-issues: 0
+  max-issues-per-linters: 0
+  exclude-use-default: false
+  exclude:
+    - G104
