@@ -10,7 +10,7 @@ linters:
     # - dupl
     - goconst
     # - gofmt
-    # - misspell
+    - misspell
     - unparam
     - nakedret
     - prealloc

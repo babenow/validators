@@ -1,4 +1,4 @@
-package comparsion
+package validators
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ type Number interface {
 // Gt GtreaterThe...
 func Gt[T Number](num T, msg string) validation.RuleFunc {
 	return func(value interface{}) error {
-		if value.(T) < num {
+		if value.(T) < num || value.(T) == num {
 			return fmt.Errorf("%s", msg)
 		}
 
@@ -25,7 +25,7 @@ func Gt[T Number](num T, msg string) validation.RuleFunc {
 // Lt LessThe....
 func Lt[T Number](num T, msg string) validation.RuleFunc {
 	return func(value interface{}) error {
-		if value.(T) > num {
+		if value.(T) > num || value.(T) == num {
 			return fmt.Errorf("%s", msg)
 		}
 
