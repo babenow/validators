@@ -22,4 +22,6 @@ go.work
 
 .vscode
 .idea/
+bin/
+
 go.sum
