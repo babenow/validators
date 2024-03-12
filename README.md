@@ -1,0 +1,1 @@
+# CUSTOM VALIDATORS FOR go-validation
