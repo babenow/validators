@@ -65,3 +65,12 @@ func Between[T Number](left T, right T, msg string) validation.RuleFunc {
 		return nil
 	}
 }
+
+func Not[T Number](num T, msg string) validation.RuleFunc {
+	return func(value interface{}) error {
+		if value.(T) == num {
+			return fmt.Errorf("%s", msg)
+		}
+		return nil
+	}
+}
